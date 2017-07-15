@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                          http://www.springframework.org/schema/mvc
+    					http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    					http://www.springframework.org/schema/context
+                          http://www.springframework.org/schema/context/spring-context.xsd
+                          http://www.springframework.org/schema/webflow-config
+                          http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd">
+ 
+  <mvc:default-servlet-handler/>
+  
+  <context:component-scan base-package="pkg1"/>                     
+<bean id="viewResolver"
+
+       class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <property name="prefix">
+         <value>/WEB-INF/jsp/</value>
+       </property>
+       <property name="suffix">
+        <value>.jsp</value>
+       
+       </property>
+  
+
+</bean>
+
+ <!-- <bean name="/hello" class="pkg1.HelloController"/>
+ <bean name="/landing" class="pkg1.LandingController"/>
+<bean name="/login" class="pkg1.LoginController"/>
+<bean name="/register" class="pkg1.RegisterController"/>
+<bean name="/productlist" class="pkg1.ProductListController"/>
+<bean name="/shoppingcart" class="pkg1.ShoppingCartController"/>
+<bean name="/accountInfo" class="pkg1.AccountInfoController"/>
+<bean name="/product" class="pkg1.ProductController"/>-->
+
+<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+
+<mvc:annotation-driven/>
+</beans>
